@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>FizzBuzz Vue</title>
+  </head>
+  <body>
+    <div id="app">
+      <input v-model="i" type="text" placeholder="Entrer un chiffre" />
+      <button @click="FizzBuzz(i)">FizzBuzz</button>
+      <span>{{ message }}</span>
+    </div>
+  </body>
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          message: "",
+          i: 0,
+        };
+      },
+      methods: {
+        FizzBuzz(n) {
+          console.log(n);
+          i = Number(n);
+          console.log(i);
+
+          if (i % 3 === 0 && i % 5 === 0) {
+            
+            console.log("FizzBuzz");
+            this.message = "FizzBuzz";
+          } else if (i % 3 === 0) {
+            console.log("Fizz");
+            this.message = "Fizz";
+          } else if (i % 5 === 0) {
+            console.log("Buzz");
+            this.message = "Buzz";
+          }else{
+              this.message = n;
+          }
+        },
+      },
+    }).mount("#app");
+  </script>
+</html>
